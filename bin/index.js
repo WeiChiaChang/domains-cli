@@ -65,7 +65,7 @@ let search = function (website) {
       table.push(
         [{
           colSpan: 2,
-          hAlign: 'center', 
+          hAlign: 'center',
           content: `📅  ${response.headers.date}`
         }],
         [{hAlign: 'center', content: `🔢  total: ${response.data.total}`}, {hAlign: 'center', content: `🕑  time: ${response.data.time}`}],
@@ -91,11 +91,11 @@ let search = function (website) {
       for (let num = 0, leng = response.data.domains.length; num < leng; num ++) {
         domainInfo.push(new Array());
         domainInfo[num].push({
-          hAlign: 'center', 
+          hAlign: 'center',
           content: (num + 1) >= 10 ? chalk.rgb(215, 156, 80)(addEmoji(num + 1)) : chalk.white(addEmoji(addZero(num + 1)))
         });
         domainInfo[num].push({
-          hAlign: 'center', 
+          hAlign: 'center',
           content: chalk.cyan(addLaptop(response.data.domains[num]))
         });
       }
@@ -123,14 +123,14 @@ let run = function (obj) {
     search(obj[0]);
   } else {
     CFonts.say('Domain-cli', {
-      font: 'block', 
-      align: 'left', 
-      colors: ['candy'], 
-      background: 'Black', 
-      letterSpacing: 2, 
-      lineHeight: 1, 
+      font: 'block',
+      align: 'left',
+      colors: ['candy'],
+      background: 'black',
+      letterSpacing: 2,
+      lineHeight: 1,
       space: true,
-      maxLength: '0' 
+      maxLength: '0'
     });
 
     inquirer.prompt(questions).then(function (answers) {
